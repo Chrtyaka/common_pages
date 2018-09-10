@@ -1,3 +1,7 @@
+/* Coommon styles
+   Общие стили для страниц ошибок */
+
+ /* Styles/Стили */
 html, body{
     margin: 0;
     padding: 0;
@@ -28,7 +32,7 @@ html, body{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 3%;
+    margin-top: 2%;
 }
 
 .error-name {
@@ -50,14 +54,15 @@ html, body{
     color: #7e57c2;
 }
 
-.back-btn-block {
-    margin-top: 5%;
+.back-btn-block, .forward-btn-block {
+    margin-top: 1%;
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 
-.back-btn {
+.back-btn, .forward-btn {
     display: flex;
     width: 70px;
     height: 70px;
@@ -67,28 +72,77 @@ html, body{
     background-color: #b39ddb;
     transition: .2s;
 }
-.back-btn:first-child {
+.back-btn:first-child, .forward-btn > i {
     color: #7e57c2;
 }
 
-.back-btn-block:hover .back-btn{
+.back-btn-block:hover .back-btn, .forward-btn-block:hover .forward-btn {
     text-decoration: none;
     background-color: #7e57c2;
 }
-.back-btn-block:hover .back-btn:first-child{
+.back-btn-block:hover .back-btn:first-child, .forward-btn-block:hover .forward-btn > i{
     color: #f5f5f5;
 }
 
-.back-btn-text {
-    color: #7e57c2;
+.back-btn-text, .forward-btn-text {
+    color: #7e57c2 !important;
     margin-left: 1rem;
     font-size: 2rem;
+}
+.forward-btn-text {
+    margin-right: 1rem;
 }
 .back-btn-text:hover{
     color: #7e57c2;
     text-decoration: none;
 }
+.service-btn-block {
+    margin-top: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.service-link {
+    text-decoration: none;
+    color: #7e57c2;
+    padding: 10px;
+    border-radius: 5px;
 
+}
+.service-link:hover {
+    text-decoration: none;
+    color: #f5f5f5;
+    background-color: #b39ddb;
+}
+
+/* Media queries/ Медиа запросы  */
+@media screen and (max-width: 1024px) {
+    .error-wrapper {
+        margin-top: 0;
+    }
+    .error-name {
+        font-size: 18rem;
+    }
+}
+@media screen and (max-width : 768px) {
+    .error-wrapper {
+        margin-top: 0;
+    }
+    .error-name {
+        font-size: 14rem;
+    }
+}
+@media screen and (max-width : 425px) {
+    .error-wrapper {
+        margin-top: 0;
+    }
+    .error-name {
+        font-size: 12rem;
+    }   
+}
+
+
+/* Animation keyframes / Ключевые кадры анимаций */
 @keyframes scale {
     0% {
       transform: scaleX(0);
@@ -97,14 +151,5 @@ html, body{
       transform: scaleX(1);
     }
   }
-  
-@media screen and (max-width: 425px){
-    .error-wrapper {
-        margin-top: 10%;
-    }
-    .error-name {
-        font-size: 14rem;
-    }
-}
 
 

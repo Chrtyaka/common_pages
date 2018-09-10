@@ -19,3 +19,11 @@
     animation: scale 1s linear;
 }
 
+@media screen and (max-width: 425px){
+    .error-name::after {
+        height: 10px;
+    }
+    .error-name::before {
+        height: 10px;
+    }
+}

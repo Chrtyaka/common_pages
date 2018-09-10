@@ -6,18 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <link rel="stylesheet" href="static/css/main.css">
+    <link rel="stylesheet" href="./static/css/errors.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css">
 
     <!-- JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
     <title>Error</title>
 </head>
 <body>
-    <div class="main-wrapper">
+    <div class="main-wrapper" id = "app">
         <div class="container-fluid main__content">
             <div class="row">
                 <h1>Ooooops, something went wrong :(</h1>
@@ -25,11 +28,36 @@
             <div class="row">
                 <h2>We'll figure out what the reason is and fire someone:)</h2>
             </div>
-            <div class="row back-btn-block">
-                <a href="urbanbasis.com" class="back-btn"><i class="fas fa-arrow-left fa-3x"></i></a>
-                <a href="urbanbasis.com" class="back-btn-text">Back to mainpage</a>
+            <div class="row navigation-block">
+                <div class="col-lg-6">
+                    <div class="row back-btn-block">
+                        <a href="www.urbanbasis.com" class="back-btn"><i class="fas fa-arrow-left fa-3x"></i></a>
+                        <a href="www.urbanbasis.com" class="back-btn-text">Back to mainpage</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row forward-btn-block" @click = "serviceBtns = !serviceBtns">
+                        <a class="forward-btn-text">Or choose service</a>
+                        <a class="forward-btn"><i class="fas fa-arrow-right fa-3x"></i></a>
+                    </div>
+                </div>
             </div>
+            <transition enter-active-class = "animated zoomIn"
+                        leave-active-class = "animated zoomOut">
+                <div class="row service-btn-block" v-show = "serviceBtns">
+                    <a href="" class="service-link">NoiseSearch</a>
+                    <a href="" class="service-link">CityLogistics</a>
+                    <a href="" class="service-link">Scatter</a>
+                    <a href="" class="service-link">ClusteringLight</a>
+                    <a href="" class="service-link">PassFlow</a>
+                    <a href="" class="service-link">WeatherHistory</a>
+                    <a href="" class="service-link">RoadSigns</a>
+                    <a href="" class="service-link">Открытая недвижимость</a>
+                    <a href="" class="service-link">LandProber</a>
+                </div>
+            </transition>
         </div>
     </div>
+    <script src="./static/js/main.js"></script>
 </body>
 </html>
