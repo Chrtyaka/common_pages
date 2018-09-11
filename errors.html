@@ -21,23 +21,26 @@
 </head>
 <body>
     <div class="main-wrapper" id = "app">
-        <div class="container-fluid main__content">
-            <div class="row">
-                <h1>Ooooops, something went wrong :(</h1>
+        <div class="container">
+            <div class="row language-btn-block">
+                <a class="language-btn" @click = "changeLanguage(404)">{{lang}}</a>
             </div>
-            <div class="row">
-                <h2>We'll figure out what the reason is and fire someone:)</h2>
+            <div class="row other-error-title">
+                <h1>{{errors.other.title}}</h1>
+            </div>
+            <div class="row other-error-description">
+                <h2>{{errors.other.description}}</h2>
             </div>
             <div class="row navigation-block">
                 <div class="col-lg-6">
                     <div class="row back-btn-block">
                         <a href="www.urbanbasis.com" class="back-btn"><i class="fas fa-arrow-left fa-3x"></i></a>
-                        <a href="www.urbanbasis.com" class="back-btn-text">Back to mainpage</a>
+                        <a href="www.urbanbasis.com" class="back-btn-text">{{backBtnText}}</a>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="row forward-btn-block" @click = "serviceBtns = !serviceBtns">
-                        <a class="forward-btn-text">Or choose service</a>
+                        <a class="forward-btn-text">{{forwardBtnText}}</a>
                         <a class="forward-btn"><i class="fas fa-arrow-right fa-3x"></i></a>
                     </div>
                 </div>
