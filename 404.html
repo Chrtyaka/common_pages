@@ -22,26 +22,26 @@
     <div class="main-wrapper" id = "app">
         <div class="container">
             <div class="row language-btn-block">
-                <a class="language-btn">EN</a>
+                <a class="language-btn" @click = "changeLanguage(404)">{{lang}}</a>
             </div>
             <div class="row error">
                 <div class="error-wrapper">
-                    <h1 class="error-name">404</h1>
+                    <h1 class="error-name">{{errors.main.title}}</h1>
                 </div>
             </div>
             <div class="row error-description">
-                <h1>Page not found</h1>
+                <h1>{{errors.main.description}}</h1>
             </div>
             <div class="row">
                 <div class="col-lg-6">
                     <div class="row back-btn-block">
                         <a href="www.urbanbasis.com" class="back-btn"><i class="fas fa-arrow-left fa-3x"></i></a>
-                        <a href="www.urbanbasis.com" class="back-btn-text">Back to mainpage</a>
+                        <a href="www.urbanbasis.com" class="back-btn-text">{{backBtnText}}</a>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="row forward-btn-block" @click = "serviceBtns = !serviceBtns">
-                        <a class="forward-btn-text">Or choose service</a>
+                        <a class="forward-btn-text">{{forwardBtnText}}</a>
                         <a class="forward-btn"><i class="fas fa-arrow-right fa-3x"></i></a>
                     </div>
                 </div>
