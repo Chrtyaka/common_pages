@@ -1,21 +1,27 @@
-.navigation-block {
-    width: 80%;
+.other-error-title h1 {
+    font-size: 5rem;
+    color: #7e57c2;
+}
+.other-error-description h2 {color: #7e57c2}
+
+.navigation-block {margin-top: 3rem;}
+
+@media screen and (max-width : 768px) {
+    .other-error-title h1 {font-size: 3rem;}
+
+    .navigation-block {margin-top: 1rem;}
 }
 
-@media screen and (max-width: 768px){
-    .main__content:first-child h1 {
-        font-size: 4rem;
-        margin-left: 1%;
-        margin-right: 1%;
+@media screen and (max-width : 425px) {
+    .other-error-title, .other-error-description {margin-top: 1rem;}
+    .other-error-title h1 {
+        font-size: 2.5rem;
+        padding-left: 1rem;
+    }
+    .other-error-description h2 {
+        font-size: 1.5rem;
+        padding-left: 1rem;
     }
 
-    h2 {
-        margin-left: 1%;
-        margin-right: 1%;
-    }
-}
-@media screen and (max-width: 425px){
-    .main__content:first-child h1 {
-        font-size: 2rem;
-    }
+    .navigation-block {margin-top: 2rem;}
 }
