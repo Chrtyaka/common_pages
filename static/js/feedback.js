@@ -5,7 +5,8 @@ var app = new Vue({
 	'RoadSigns', 'Открытая недвижимость','LandProber'],
 	serviceName: '',
 	commentService: '',
-    rating: 1,
+	rating: 1,
+	loading : false,
     },
 	methods:{
 		sendEmail(){
@@ -15,13 +16,13 @@ var app = new Vue({
 				service_name : this.serviceName,
 				service_rating: this.rating,
 				comment_service : this.commentService
-            }
+			}
+			this.loading = !this.loading
 			emailjs.send(service_id,template_id,template_params).then(function(response) {
-                alert('Успешно! Спасибо за ваш отзыв:)')
+				alert('Успешно! Спасибо за ваш отзыв:)')
 			}, function(error) {
-                alert('Неудачно! Попробуйте еще раз! Или обратитесь в техподдержку: urbanbasis@gmail.com')
-            });
-            
+				alert('Неудачно! Попробуйте еще раз! Или обратитесь в техподдержку: urbanbasis@gmail.com')
+			});
 		}
 	},
     mounted(){
